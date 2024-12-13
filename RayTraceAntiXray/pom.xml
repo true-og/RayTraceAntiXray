@@ -5,7 +5,7 @@
     <artifactId>raytraceantixray-parent</artifactId>
     <version>1.10.8</version>
   </parent>
-  <artifactId>raytraceantixray</artifactId>
+  <artifactId>RayTraceAntiXray</artifactId>
   <name>RayTraceAntiXray</name>
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
@@ -121,6 +121,28 @@
           </dependency>
         </dependencies>
       </plugin>
+      <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>copy-jar</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <copy
+				    file="target/RayTraceAntiXray-${project.version}.jar"
+			            todir="../target"
+                                    overwrite="true"/>
+                            </target>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
     </plugins>
   </build>
 </project>
