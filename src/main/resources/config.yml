@@ -1,5 +1,5 @@
 # This is an example configuration. Lines starting with # are comments and are ignored.
-# 
+#
 # settings:
 #   anti-xray:
 #     update-ticks: 1                           # Time period in Minecraft ticks for sending block updates.
@@ -26,13 +26,38 @@ settings:
   anti-xray:
     update-ticks: 1
     ms-per-ray-trace-tick: 50
-    ray-trace-threads: 2
+    ray-trace-threads: 8
 world-settings:
   default:
     anti-xray:
-      ray-trace: true
-      ray-trace-third-person: false
+      ray-trace: false
+      ray-trace-third-person: true
       ray-trace-distance: 80.0
-      max-ray-trace-block-count-per-chunk: 100
+      max-ray-trace-block-count-per-chunk: 200
       rehide-blocks: false
       ray-trace-blocks: []
+  world:
+    anti-xray:
+      ray-trace: true
+      ray-trace-blocks:
+      - diamond_ore
+      - deepslate_diamond_ore
+      - emerald_ore
+      - deepslate_emerald_ore
+      - gold_ore
+      - deepslate_gold_ore
+      - lapis_ore
+      - deepslate_lapis_ore
+      - redstone_ore
+      - deepslate_redstone_ore
+      - mossy_cobblestone
+  world_nether:
+    anti-xray:
+      ray-trace: true
+      ray-trace-blocks:
+      - ancient_debris
+      - nether_gold_ore
+      - nether_quartz_ore
+  world_the_end:
+    anti-xray:
+      ray-trace: false
